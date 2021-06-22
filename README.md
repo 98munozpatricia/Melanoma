@@ -7,7 +7,7 @@ Follow these steps to train Melanoma Dataset with EfficientNet b0
 Clone this repository
 ````bash
 git clone https://github.com/98munozpatricia/Melanoma.git
-cd Melanoma
+cd Melanoma/
 ````
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install Efficientnet and Torch toolbox.
 
