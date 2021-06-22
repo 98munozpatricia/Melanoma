@@ -110,9 +110,9 @@ np.random.seed(47)
 
 
 from torch.utils.data import WeightedRandomSampler
-epochs = 1  # Number of epochs to run
+epochs = 100  # Number of epochs to run
 model_path = 'model.pth'  # Path and filename to save model to
-es_patience = 3  # Early Stopping patience - for how many epochs with no improvements to wait
+es_patience = 20  # Early Stopping patience - for how many epochs with no improvements to wait
 TTA = 3 # Test Time Augmentation rounds
 #oof = np.zeros((len(train_df), 1))  # Out Of Fold predictions
 preds = torch.zeros((len(test), 1), dtype=torch.float32, device=device)  # Predictions for test test
@@ -146,7 +146,7 @@ val = MelanomaDataset(df=validation_df.reset_index(drop=True),
                         imfolder='dataset/validation/', 
                         train=True, 
                         transforms=test_transform)
-print(len(train))
+
 # Train weight balancing
 class_weights_train = [sum(counts_train)/c for c in counts_train]
 train_weights = [class_weights_train[e] for e in train_df['target']]
@@ -166,9 +166,8 @@ for epoch in range(epochs):
     correct = 0
     epoch_loss = 0
     model.train()
-    print(len(train_loader))
     for x, y, img in train_loader:
-        #print(img)
+        print(img)
         x = torch.tensor(x, device=device, dtype=torch.float32)
         y = torch.tensor(y, device=device, dtype=torch.float32)
         optim.zero_grad()
@@ -186,7 +185,7 @@ for epoch in range(epochs):
     with torch.no_grad():  # Do not calculate gradient since we are only predicting
        # Predicting on validation set
         for j, (x_val, y_val, img) in enumerate(val_loader):
-            #print(img)
+            print(img)
             x_val = torch.tensor(x_val, device=device, dtype=torch.float32)
             y_val = torch.tensor(y_val, device=device, dtype=torch.float32)
             z_val = model(x_val)
@@ -248,4 +247,3 @@ gc.collect()
 sub = pd.read_csv('dataset/sample_submission.csv')
 sub['target'] = (preds.cpu().numpy().reshape(-1,).round())
 sub.to_csv('submission.csv', index=False)
-
