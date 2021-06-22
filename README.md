@@ -18,6 +18,5 @@ unzip dataset.zip
 ## Usage
 
 ```python
-cd dataset/
 python tfg_melanoma.py
 ```
