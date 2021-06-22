@@ -18,5 +18,5 @@ unzip dataset.zip
 ## Usage
 
 ```python
-python tfg_melanoma.py
+python train_melanoma.py
 ```
