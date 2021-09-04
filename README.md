@@ -1,6 +1,8 @@
-# Training Melanoma Dataset
+# Melanoma detection CNN using PyTorch
 
-Follow these steps to train Melanoma Dataset with EfficientNet b0
+Follow these steps to train and optimiza a Melanoma Dataset with EfficientNet b0.
+
+This project solves the problem proposed by SIIM-ISIC: [Melanoma Classification in Kaggle](https://www.kaggle.com/c/siim-isic-melanoma-classification).
 
 ## Installation
 
