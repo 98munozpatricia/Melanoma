@@ -31,12 +31,12 @@ This aim of this project is also to optimize the model. For doing so, two other 
 Those are developed for the Melanoma model optimization, but can be used as an example for any other Neural Network model by changing the application layers.
 very script has different methods for each type of quantization including:
 
-	- Dynamic quantization
-	- Static quantization
-	- Quantization-aware training
+* Dynamic quantization
+* Static quantization
+* Quantization-aware training
 
-	- Unstructured pruning
-	- Structured pruning
+* Unstructured pruning
+* Structured pruning
 
 These methods use the PyTorch API for [Quantization](https://pytorch.org/docs/stable/quantization.html) and [Pruning](https://pytorch.org/tutorials/intermediate/pruning_tutorial.html).
 
