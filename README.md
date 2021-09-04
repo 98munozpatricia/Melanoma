@@ -29,7 +29,7 @@ python trainMelanoma.py
 ```
 This aim of this project is also to optimize the model. For doing so, two other scripts are added: quantization.py and pruning.py.
 Those are developed for the Melanoma model optimization, but can be used as an example for any other Neural Network model by changing the application layers.
-very script has different methods for each type of quantization including:
+Every script has different methods for each type of quantization including:
 
 * Dynamic quantization
 * Static quantization
